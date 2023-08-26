@@ -9,7 +9,7 @@
 * My Contribution Journey ->
     * [Project Development Diary](https://docs.google.com/document/d/1gsRQepBochpEL1ASOPFwII6olB8vulU73TDNcHqstUE/edit?usp=sharing) 
     * [Progress Progress Tracker](https://docs.google.com/spreadsheets/d/1925x3CV-awJKOs7Q3sSbBp-BN1PwsH4O2mp9Xqw5H4c/edit?usp=sharing)
-* Also, don't forget to read the [Acknowledgements](https://github.com/tabhishek432/GSoC-2023-xaos/README.md#acknowledgement)!
+* Also, don't forget to read the [Acknowledgements](https://github.com/tabhishek432/GSoC-2023-xaos/blob/main/README.md#acknowledgement)!
 
 ### Accomplished tasks
 #### Adding the web user interface
