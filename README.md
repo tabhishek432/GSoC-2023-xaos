@@ -54,7 +54,7 @@ Still we needed to solve the issue of getting the menu items work properly in Qt
 
 In the meantime, Dr. Zoltan advised to me to work on the `showDialog` function and try conneting it to timeout signals. I tried the usual way but it wasn't helping. Then, after he took time to write code for individual cases of the type of input parameters. And it finally started working! My task was to now continue this and reciprocate for all the cases of different types of input parameters.
 
-Here's the code I committed for making it work in Qt6 and all the above features: [Final Result]()
+Here's the code I committed for making it work in Qt6 and all the above features: [Final Result](https://github.com/tabhishek432/XaoS/tree/qt6)
 
 ### Future tasks
 Future tasks involve some of the pending implementation like making `DIALOF_IFILE`, `DIALOG_OFILE` etc. cases work. Full testing after rectifying all the errors is also to be done to make sure XaoS works fine across platforms.<br />
