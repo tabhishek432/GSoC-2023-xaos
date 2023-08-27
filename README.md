@@ -15,7 +15,7 @@
 ### Accomplished tasks
 First of all, to commence, it became evident that achieving the compilation of XaoS in web assembly necessitated certain adjustments. These alterations encompassed the inclusion of `c++11` within the configuration and the incorporation of `QMAKE_CXXFLAGS += -fpermissive` during the process.
 #### Adding the web user interface
-The challenge was as mentioned above that the current implementation of XaoS using Qt web assembly is not functioning on web platforms due to issues with the synchronous, infinite loop used in XaoS's event loop. Initially it was a challenging task to make web assembly version of XaoS work as we thought to use QTimer in all the functions. But thinking of approach to do it one by one, and finally QTimer, or we can say can say connecting its timeout() signal to the only function responsible for primary infinite loop in main.cpp, that is eventLoop() function inside mainwindow.cpp, it was finally working in web browser.
+The challenge was as mentioned above was that the current implementation of XaoS using Qt web assembly is not functioning on web platforms due to issues with the synchronous, infinite loop used in XaoS's event loop. Initially it was a challenging task to make web assembly version of XaoS work as we thought to use QTimer in all the functions. But thinking of approach to do it one by one, and finally QTimer, or we can say can say connecting its timeout() signal to the only function responsible for primary infinite loop in main.cpp, that is eventLoop() function inside mainwindow.cpp, it was finally working in web browser.
 
 The Initial commit resolving the issue can be found here: [#151](https://github.com/xaos-project/XaoS/commit/8a08d80386325dd0ec700f0fcd1d6d717a03b76d) <br />
 The first version of working XaoS web UI can be found here: [https://matek.hu/zoltan/xaos/](https://matek.hu/zoltan/xaos/)
@@ -38,9 +38,16 @@ After some thoughts, there was a better solution found. We can define a function
 The commit to resolve this issue can found here: [#225](https://github.com/xaos-project/XaoS/commit/67a9c261479e5dc70db9704d468c99d65725aeef)
 
 #### Attempts to make async functions work
+Now back to making Xaos work fully functional in the web browser, we faced many challenges. Many menu items were not working for example, if you wish to change the Iterations in Calculations menu item, it was not updating in the dialog box after you change and hit Ok. This was happening for many of the menu items. For debugging, we looked at the google chrome developers' console, and it was showing error, that is, "Uncaught Please compile your program with async support in order to use asynchronous operations like emscripten_sleep". <br />
+We realised that maybe it's time to shift to Qt6 version to resolve the issue. But it was also giving an Application exit error stating "Index out of bounds".
 
+We then posted this query on Qt forums hoping to resolve this issue : [Query posted on Qt forums](https://forum.qt.io/topic/146513/error-while-running-xaos-as-a-web-application-in-qt6) <br />
+But it didn't help us much. Then in order to tackle this issue, we thought of using "ASYNCIFY" flag inside Xaos.pro hoping that it'll work, but it didn't as well. <br />
+
+We then wrote a mail to Morten Sorvig (from Qt) explaining our issue and ASYNCIFY not working for Qt5. He told us that Qt5 will see no further development in web assembly and all the development will now happen in Qt6. Therefore, now we were only left with one option that is to make Xaos work with Qt6 verison.
 
 #### Implementing XaoS in Qt6
+
 
 ### Future tasks
 
