@@ -44,7 +44,7 @@ We realised that maybe it's time to shift to Qt6 version to resolve the issue. B
 We then posted this query on Qt forums hoping to resolve this issue : [Query posted on Qt forums](https://forum.qt.io/topic/146513/error-while-running-xaos-as-a-web-application-in-qt6) <br />
 But it didn't help us much. Then in order to tackle this issue, we thought of using "ASYNCIFY" flag inside Xaos.pro hoping that it'll work, but it didn't as well. <br />
 
-We then wrote a mail to Morten Sorvig (from Qt) explaining our issue and ASYNCIFY not working for Qt5. He told us that Qt5 will see no further development in web assembly and all the development will now happen in Qt6. Therefore, now we were only left with one option that is to make Xaos work with Qt6 verison.
+We then wrote a mail to Morten Sørvig (from Qt) explaining our issue and ASYNCIFY not working for Qt5. He told us that Qt5 will see no further development in web assembly and all the development will now happen in Qt6. Therefore, now we were only left with one option that is to make Xaos work with Qt6 verison.
 
 #### Implementing XaoS in Qt6
 By running XaoS in Qt6.5.1 with emscripten version 3.1.25, we were getting index out of bound error for a long time. We tried many versions of emscripten like 3.1.39 and 3.1.42 but it didn't resolve the issue. It finally worked when Dr. Zoltan told me that it was working fine for the newer versions of Qt. Then, after installing Qt version 6.5.2 and running it with emscripten version it with 3.1.25, it finally worked!
