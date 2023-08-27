@@ -47,9 +47,19 @@ But it didn't help us much. Then in order to tackle this issue, we thought of us
 We then wrote a mail to Morten Sorvig (from Qt) explaining our issue and ASYNCIFY not working for Qt5. He told us that Qt5 will see no further development in web assembly and all the development will now happen in Qt6. Therefore, now we were only left with one option that is to make Xaos work with Qt6 verison.
 
 #### Implementing XaoS in Qt6
+By running XaoS in Qt6.5.1 with emscripten version 3.1.25, we were getting index out of bound error for a long time. We tried many versions of emscripten like 3.1.39 and 3.1.42 but it didn't resolve the issue. It finally worked when Dr. Zoltan told me that it was working fine for the newer versions of Qt. Then, after installing Qt version 6.5.2 and running it with emscripten version it with 3.1.25, it finally worked!
 
+Here's the web version of Xaos working in Qt6.5.2: [Xaos in Qt6](https://matek.hu/zoltan/xaos.tmp3/xaos.html)
+Still we needed to solve the issue of getting the menu items work properly in Qt6. We tried to use "sASYNCIFY" flag to make it work but it was just slowing the application down very much and the application kept hanging. We tried many other similar things to get it working but it didn't work.
+
+In the meantime, Dr. Zoltan advised to me to work on the `showDialog` function and try conneting it to timeout signals. I tried the usual way but it wasn't helping. Then, after he took time to write code for individual cases of the type of input parameters. And it finally started working! My task was to now continue this and reciprocate for all the cases of different types of input parameters.
+
+Here's the code I committed for making it work in Qt6 and all the above features: [Final Result]()
 
 ### Future tasks
-
+Future tasks involve some of the pending implementation like making `DIALOF_IFILE`, `DIALOG_OFILE` etc. cases work. Full testing after rectifying all the errors is also to be done to make sure XaoS works fine across platforms.<br />
+If web version of XaoS becomes success, we can think of expanding the code to android version too!
 
 ### Acknowledgement
+I wish to extend my heartfelt gratitude to Dr. Zoltán Kovács, whose unwavering support and guidance have been invaluable. He not only provided motivation during challenging phases but also fostered an environment where questions were encouraged. His dedication was evident as he delved into code, authored new lines, and generously invested his time to aid my progress. Furthermore, my appreciation extends to Mr. Anurag Aggarwal, whose consistent help proved instrumental in comprehending complex processes. His patient explanations on project debugging have equipped me with valuable skills. The privilege of contributing to the GNU project organization during the summer has been a source of immense gratitude. This experience has been an enriching journey, and the lessons learned will forever hold a special place in my growth as a professional.
+
