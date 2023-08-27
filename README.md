@@ -10,7 +10,7 @@
 * My Contribution Journey ->
     * [Project Development Diary](https://docs.google.com/document/d/1gsRQepBochpEL1ASOPFwII6olB8vulU73TDNcHqstUE/edit?usp=sharing) 
     * [Project Progress Tracker](https://docs.google.com/spreadsheets/d/1925x3CV-awJKOs7Q3sSbBp-BN1PwsH4O2mp9Xqw5H4c/edit?usp=sharing)
-* Also, don't forget to read the [Acknowledgements](https://github.com/tabhishek432/GSoC-2023-xaos/blob/main/README.md#acknowledgement)!
+* Also, don't forget to read the [Acknowledgement](https://github.com/tabhishek432/GSoC-2023-xaos#acknowledgement)!
 
 ### Accomplished tasks
 First of all, to commence, it became evident that achieving the compilation of XaoS in web assembly necessitated certain adjustments. These alterations encompassed the inclusion of `c++11` within the configuration and the incorporation of `QMAKE_CXXFLAGS += -fpermissive` during the process.
