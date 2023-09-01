@@ -10,6 +10,7 @@
 * My Contribution Journey ->
     * [Project Development Diary](https://docs.google.com/document/d/1gsRQepBochpEL1ASOPFwII6olB8vulU73TDNcHqstUE/edit?usp=sharing) 
     * [Project Progress Tracker](https://docs.google.com/spreadsheets/d/1925x3CV-awJKOs7Q3sSbBp-BN1PwsH4O2mp9Xqw5H4c/edit?usp=sharing)
+* The latest stable version of website: [XaoS](https://matek.hu/zoltan/xaos/)
 * Also, don't forget to read the [Acknowledgement](https://github.com/tabhishek432/GSoC-2023-xaos#acknowledgement)!
 
 ### Accomplished tasks
@@ -18,7 +19,7 @@ First of all, to commence, it became evident that achieving the compilation of X
 The challenge was as mentioned above was that the current implementation of XaoS using Qt web assembly is not functioning on web platforms due to issues with the synchronous, infinite loop used in XaoS's event loop. Initially it was a challenging task to make web assembly version of XaoS work as we thought to use QTimer in all the functions. But thinking of approach to do it one by one, and finally QTimer, or we can say can say connecting its timeout() signal to the only function responsible for primary infinite loop in main.cpp, that is eventLoop() function inside mainwindow.cpp, it was finally working in web browser.
 
 The Initial commit resolving the issue can be found here: [#151](https://github.com/xaos-project/XaoS/commit/8a08d80386325dd0ec700f0fcd1d6d717a03b76d) <br />
-The first version of working XaoS web UI can be found here: [https://matek.hu/zoltan/xaos/](https://matek.hu/zoltan/xaos/)
+The first version of working XaoS web UI can be found here: [Xaos in Qt5](https://matek.hu/zoltan/xaos.qt5/)
 
 ***Minor issue to get tutorials, catalogs and examples working***<br />
 In web version, there was an issue of tutorials, catalogs and examples not being found as it wasn't having the right datapath to load the files. Following were the adjustments needed in the Xaos.pro file to get these files loaded and working:
@@ -47,14 +48,15 @@ But it didn't help us much. Then in order to tackle this issue, we thought of us
 We then wrote a mail to Morten Sørvig (from Qt) explaining our issue and ASYNCIFY not working for Qt5. He told us that Qt5 will see no further development in web assembly and all the development will now happen in Qt6. Therefore, now we were only left with one option that is to make Xaos work with Qt6 verison.
 
 #### Implementing XaoS in Qt6
-By running XaoS in Qt6.5.1 with emscripten version 3.1.25, we were getting index out of bound error for a long time. We tried many versions of emscripten like 3.1.39 and 3.1.42 but it didn't resolve the issue. It finally worked when Dr. Zoltan told me that it was working fine for the newer versions of Qt. Then, after installing Qt version 6.5.2 and running it with emscripten version it with 3.1.25, it finally worked!
+By running XaoS in Qt6.5.1 with emscripten version 3.1.25, we were getting index out of bound error for a long time. We tried many versions of emscripten like 3.1.39 and 3.1.42 but it didn't resolve the issue. Then, after installing Qt version 6.5.2 and running it with emscripten version it with 3.1.25, it finally worked!
 
-Here's the web version of Xaos working in Qt6.5.2: [Xaos in Qt6](https://matek.hu/zoltan/xaos.tmp3/xaos.html)
+Here's the web version of Xaos working in Qt6.5.2: [Xaos in Qt6](https://matek.hu/zoltan/xaos.qt6/xaos.html) <br />
 Still we needed to solve the issue of getting the menu items work properly in Qt6. We tried to use "sASYNCIFY" flag to make it work but it was just slowing the application down very much and the application kept hanging. We tried many other similar things to get it working but it didn't work.
 
-In the meantime, Dr. Zoltan advised to me to work on the `showDialog` function and try conneting it to timeout signals. I tried the usual way but it wasn't helping. Then, after he took time to write code for individual cases of the type of input parameters. And it finally started working! My task was to now continue this and reciprocate for all the cases of different types of input parameters.
+In the meantime, we decided to work on the `showDialog` function and try conneting it to timeout signals. We tried the usual way but it wasn't helping. Then, after he took time to write code for individual cases of the type of input parameters. And it finally started working! My task was to now continue this and reciprocate for all the cases of different types of input parameters.
 
-Here's the code I committed for making it work in Qt6 and all the above features: [Final Result](https://github.com/tabhishek432/XaoS/tree/qt6)
+Final version at the end: [Current progress of XaoS](https://matek.hu/zoltan/xaos-20230830/) <br />
+Here's the code I committed for making it work in Qt6 and all the above features: [Final Result](https://github.com/tabhishek432/XaoS/tree/qt6) <br />
 
 ### Future tasks
 Future tasks involve some of the pending implementation like making `DIALOF_IFILE`, `DIALOG_OFILE` etc. cases work. Full testing after rectifying all the errors is also to be done to make sure XaoS works fine across platforms.<br />
