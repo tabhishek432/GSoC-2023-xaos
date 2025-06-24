@@ -10,7 +10,7 @@
 * My Contribution Journey ->
     * [Project Development Diary](https://docs.google.com/document/d/1gsRQepBochpEL1ASOPFwII6olB8vulU73TDNcHqstUE/edit?usp=sharing) 
     * [Project Progress Tracker](https://docs.google.com/spreadsheets/d/1925x3CV-awJKOs7Q3sSbBp-BN1PwsH4O2mp9Xqw5H4c/edit?usp=sharing)
-* The latest stable version of website: [XaoS](https://matek.hu/zoltan/xaos/)
+* The latest stable version of website: [XaoS](https://xaos.app/)
 * Also, don't forget to read the [Acknowledgement](https://github.com/tabhishek432/GSoC-2023-xaos#acknowledgement)!
 
 ### Accomplished tasks
