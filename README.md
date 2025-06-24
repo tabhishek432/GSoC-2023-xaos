@@ -2,7 +2,7 @@
 ## GSoC 2023 Final Report
 
 * Author :  [Abhishek Tiwari](https://github.com/tabhishek432) (yours truly :D)
-* The Ultimate Support System (aka Mentors) : [Dr. Zoltán Kovács](https://github.com/kovzol) & [Mr. Anurag Aggarwal](https://github.com/kanurag94) (Can't thank them enough! :')
+* Mentors : [Dr. Zoltán Kovács](https://github.com/kovzol) & [Mr. Anurag Aggarwal](https://github.com/kanurag94) 
 * The Project Name : **Adding web user interface to XaoS**
 * The Proposed Problem : [GSoC 2023 Idea for XaoS](https://www.gnu.org/software/soc-projects/ideas-2023.html#xaos)
 * My Proposal Summary ->
